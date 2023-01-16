@@ -1,10 +1,10 @@
 # kraftwerk
 This file contains a summary of findings from exploration of a dataset from the UCI Machine Learning repository. The data was collected via a survey on Amazon Mechanical Turk. The purpose of the exploration was to determine characteristics of drivers who are more likely to accept ***coffee house*** coupons.
 
-# Brief description of the dataset
+# Brief Description of the Dataset
 The dataset is based on a survey describing different driving scenarios, including the destination, current time, weather, passenger, etc., and then asking people whether they will accept the coupon if they are the driver. Answers given that the users will drive there “right away” or “later before the coupon expires” are labeled as “Y = 1”, and answers “no, I do not want the coupon” are labeled as “Y = 0”. There are five different types of coupons—less expensive restaurants (under $20), coffee houses, carry out and take away, bars, and more expensive restaurants ($20–$50). The current work focuses on identifying attributes that provide a higher likelihood of drivers accepting ***coffee house*** coupons.
 
-# Codes for visualization and analysis
+# Codes for Visualization and Analysis
 The codes used for visualization and analysis are included in the following notebook file with detailed step-by-step comments. The notebook can be found at this location:
 https://github.com/SubhamGhosh12/kraftwerk/blob/main/prompt1.ipynb
 
