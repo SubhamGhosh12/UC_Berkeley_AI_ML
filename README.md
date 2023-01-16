@@ -25,7 +25,7 @@ Total number of coffee-house coupons that were issued was 3816 and the overall a
 
 6) drivers who are unemployed or students or people employed in healthcare support or as healthcare practitioners/technical (acceptance rate = 0.576 vs 0.465 for those in other occupations) 
 
-7) drivers who are females and have 4 or more monthly visits to restaurants where they spend $20-50: they are more likely to accept coffee house coupons (acceptance rate=0.652) compared to all others (acceptance rate=0.491)
+7) drivers who are females and have 4 or more monthly visits to more expensive ($20-50) restaurants: they are more likely to accept coffee house coupons (acceptance rate=0.652) compared to all others (acceptance rate=0.491)
 
 A few other factors which seem to influence acceptance rates are 
 
