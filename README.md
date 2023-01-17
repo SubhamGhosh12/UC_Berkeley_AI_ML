@@ -1,4 +1,4 @@
-# kraftwerk
+# Practical Application Assignment 5.1
 This file contains a summary of findings from exploration of a dataset from the UCI Machine Learning repository. The data was collected via a survey on Amazon Mechanical Turk. The purpose of the exploration was to determine characteristics of drivers who are more likely to accept ***coffee house*** coupons.
 
 # Brief Description of the Dataset
