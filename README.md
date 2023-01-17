@@ -11,7 +11,7 @@ https://github.com/SubhamGhosh12/kraftwerk/blob/main/prompt1.ipynb
 A summary of the main findings from this analysis is included below.
 
 # Summary
-Total number of coffee-house coupons that were issued was 3816 and the overall acceptance rate was 0.496. The characteristics below seem to apply to drivers more likely to accept coffee house coupons:
+Total number of coffee-house coupons that were issued was 3816 and the overall acceptance rate was 0.496. It is to be noted that these are the numbers based off the cleaned dataset after dropping a small percentage (<5%) of rows with missing data columns. The characteristics below seem to apply to drivers more likely to accept coffee house coupons:
 
 1) drivers with age under 50 years: they have a better acceptance rate (0.509) compared to those above 50 ('50plus' group) where the acceptance rate is 0.42. The acceptance rate is most impressive for males in the age group below 21 (acceptance rate=0.819) compared to an acceptance rate of 0.483 for all others excluding males below 21
 
