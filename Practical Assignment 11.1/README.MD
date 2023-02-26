@@ -228,10 +228,5 @@ Manufacturer was not among the top five features impacting price. Interestingly,
 
 **Recommendations**: **Models** of car have the biggest impact on prices. In terms of inventory, this would imply stocking up more on premium models across different manufacturers for favorable pricing rather than have different tiers of models corresponding to  a particular manufacturer. Stocking the inventory with more recent models is also important as **year** is the attribute with second most impact on price. Cars that have been driven less fetch higher prices as **odometer** is the third most impactful feature (lower the odometer, higher the price). Lastly, **transmission** (automatic or others for higher price compared to manual) and **fuel** type (diesel or electric for higher price compared to gas/hybrid) also impact price but to a lesser extent than the other three.
 
-
-
-
-
-
  
  
