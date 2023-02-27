@@ -179,7 +179,7 @@ We built a second order polynomial model with the top five features based on the
 
 ## **Model Evaluation**
 
-Our best performing model is second order polynomial model with Linear Regression that accepts 8 attributes as input features to predict the price of used cars. We have used hold out cross-validation for our model which works well for most cases. In the evaluation phase, we re-tested the performance of the model using K-Fold validaton just to make sure our results from the hold out cross-validation are not biased due to any unprecedented reasons. Once again we made sure test datasets are encoded without utilization of the test values of the target variable to make sure we get unbiased results from K-Fold Cross-Validation. Following are the results from K-Fold validation using number of splits=5.
+Our best performing model is second order polynomial model with Linear Regression that accepts 8 attributes as input features to predict the price of used cars. We have used hold out cross-validation for our model which works well for most cases. In the evaluation phase, we re-tested the performance of the model using **K-Fold cross-validaton** just to make sure our results from the hold out cross-validation are not biased due to any unprecedented reasons. Once again we made sure test datasets are encoded without utilization of the test values of the target variable to make sure we get unbiased results from K-Fold Cross-Validation. Following are the results from K-Fold validation using number of splits=5.
 
 KFold Scores for number of splits = 5
 
