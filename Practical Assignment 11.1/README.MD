@@ -63,7 +63,7 @@ Test RMSE: 6479.8
 
 Test r2 score: 0.73
 
-Lasso Model: Best Alpha and Model Scores
+**Lasso Model: Best Alpha and Model Scores**
 
 
 Best Alpha (based on **GridSearchCV**): 0.001
@@ -92,6 +92,23 @@ Test RMSE: 6593.35
 
 Test r2 score: 0.72
 
+Sequential Feature Selection (SFS) showed how a simpler model can built with fewer (5) features, where the top features in order of magnitude of coefficients, and hence in the order of highest (positive or negative) impact on price are:
+
+1) Model (positive)
+
+2) Odomoter (negative)
+
+3) Year (positive)
+
+4) Transmission (negative)
+
+5) Fuel (positive)
+
+This is consistent with what the earlier models (without SFS) including  Linear Regression, Ridge Regression and Lasso models showed based on their respective model coefficients.
+
+
+
+
 #### **Higher Order Polynomial Regression**
 
 Next we evaluate the effect of increasing complexity with **Polynomial Features** and iterating through different complexites from degree = 1 through degree = 4 and a **LinearRegession estimator**. We evaluate the best complexity based on the test mean squared error and accordingly found the best complexity as degree = 2, with the following scores:
@@ -108,7 +125,7 @@ Test r2 score for Best Model :  0.78
 
 The second order polynomial regression with the Linear Regression estimator seems to give a meaningful improvement in model performance than simple first oder linear regression. We also tried the Ridge and Lasso models with second order polynomials and following are the model scores:
 
-Ridge Regression with Higher Order Polynomial (degree=2) : Best Alpha and Model Scores
+**Ridge Regression with Higher Order Polynomial (degree=2)** : Best Alpha and Model Scores
 
 Best Alpha (based on **GridSearchCV**): 0.001
 
@@ -122,7 +139,7 @@ Test RMSE: 5896.54
 
 Test r2 score: 0.78
 
-Lasso Model with 2nd order Polynomial Features: Best Alpha and Model Scores
+**Lasso Model with 2nd order Polynomial Features**: Best Alpha and Model Scores
 
 
 Best Alpha (based on **GridSearchCV**): 1.0
@@ -138,7 +155,7 @@ Test RMSE: 6242.41
 
 Test r2 score: 0.75
 
-The best performing model based on these evaluations was the Linear Regression model with second order polynomial features. Since this was a complex model, interpretation of coefficients was not that simple. Hence permutation importance analysis was performed to examine which features had most impact on model results. These are the features ranked in order of their importance (highest impact first):
+The best performing model based on these evaluations was the Linear Regression model with second order polynomial features. Since this was a complex model, interpretation of coefficients was not that simple. Hence **permutation importance** analysis was performed to examine which features had most impact on model results. These are the features ranked in order of their importance (highest impact first):
 
 neg_mean_squared_error
 
