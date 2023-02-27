@@ -1,4 +1,6 @@
-# **UC Berkeley AI/ML Prof Certification :Practical Application Assignment 11.1: What Drives the Price of a Car?**
+# **Practical Application Assignment 11.1 (Module 11, UC Berkeley Professional Certification in AI/ML):** 
+# ***What Drives the Price of a Car?***
+
 
 This file contains a summary of findings based on exploration of a Kaggle dataset ( recorded in the csv file "vehicles.csv") on used car prices. The CRISP-DM framework is followed as closely as possible for this work as described below. The codes for data cleaning and visualization, modeling and other analyses are found here:
 https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Practical%20Assignment%2011.1/PromptIIa.ipynb
