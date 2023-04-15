@@ -15,6 +15,9 @@ The **business objective** is to predict which clients subscribed a term deposit
 ### Engineering Features
 The seven features corresponding to the bank client data are selected as input features for a classifier model that can predict whether a client is a subscriber or not based on this information. The target variable is converted to numeric by mapping the Yes/No response to 1/0 respectively.We notice that there is substantial imbalance in the data with the subscribers being only 11.2% of the customers. We need to address the imbalance by Synthetic  Minority Oversampling Technique (SMOTE) as many classifiers including logistic regression, KNN, SVM, etc does not train well when there is such imbalance. The oversampling will be applied to training data only, so this will be done after train/test split. We also note that some of the categorical features (e.g. job) have a high degree of cardinality, so we will employ target based encoding for these as one hot or similar form of encoding will greatly enhance the number of features which is not usually desirable for a machine learning problem. We choose Leave One Out encoding which is a form of target encoding that minimizes bias. In this method, the train and test data are encoded separately - the test data is encoded without utilizing the test values of the target variable which is important for not introducing bias in our encoding method. Hence these two steps (SMOTE and Leave One Out Encoding) are performed after the train/test split.
 
+#### Exploratory Data Analysis
+We also performed exploratory analysis to see how different features individually impact term subscription. Age did not seem to be a differentiating feature for subscription. The categorical features like job, marital status, loan, default, education also seemed to have some influence on the decision to subscribe. From past campaign data, the outcomes from previous campaigns also seem to have a substantial influence. The attributes related to socio-economic context, especially euribor3m, cons.price.idx and cons.conf.idx all seemed to have an influence on term subscription.
+
 ### Train Test Split 
 The data is split into train test split using a random_state=42 and default test size of 0.25.
 
@@ -113,6 +116,46 @@ Support Vector Machine (SVM)-based classifier is next best which closely matches
 
 KNeighbors (KNN) and Decision Tree classifiers did not work well for this classification problem as reflected by low recall (sensitivity) for the subscriber class and an ROC AUC that's roughly around 0.5 (a random classifier would have an expected ROC AUC of 0.5)
 
+### Adding More Features to Our Best Model
+
+We explored the possibility of boosting the performance of our model by incorporating additional features that seem to influence term subscription based on our initial exploratory analysis. We know that duration of the call should not be included as a feature for a realistic predictor as it is known only after the call has been made. However, there are other information related to month of the call, contact type, outcomes from previous campaigns and prevailing social and economic context attributes which seem to have a substantial impact on decision to subscribe based on our initial exploratory data analysis.Hence, incorporating these features may help improve the performance of the model. This may be useful information to know as well for future campaigns. For example, if there are particular months when customers are more likely to subscribe that's helpful to know. If there are certain prevailing economic/social context attributes that impacts term subscription that's important to know. If the client's response to previous campaigns are known, that may be useful information going forward.  These features may add more valuable information for future campaigns on top of the basic client related data that our models have used this far.
+
+Hence we add the following features to our Logistic Regression model to see if they can enhance the performance over the model that used just the  basic client info.
+
+
+Information that may affect subscription, e.g. contact type, month of contact, day of week to call the client
+
+**contact**: contact communication type (categorical: 'cellular','telephone')
+
+**month**: last contact month of year (categorical: 'jan', 'feb', 'mar', ..., 'nov', 'dec')
+
+**poutcome**: outcome of the previous marketing campaign (categorical: 'failure','nonexistent','success')
+
+
+
+Information on prevailing social/economic conditions: these are not related to the client but may affect client's subscription
+
+**cons.price.idx**: consumer price index - monthly indicator (numeric)
+
+**cons.conf.idx**: consumer confidence index - monthly indicator (numeric)
+
+**euribor3m**: euribor 3 month rate - daily indicator (numeric)
+
+
+It is to be noted that emp.var.rate and nr.employed have strong correlation wit euribor3m, so only one of these, euribor3m, is retained for the model as strongly correlated features would lead to multi-collinearity which is not ideal for Logistic Regression.
+
+#### Results of Logistic Regression Model with Added Features
+The above features are added on top of the four best client-related features to Logistic Regression Model. After performing GridSearchCV the following model turned out to be the best estimator with the added feature set: 
+ 
+            LogisticRegression(C=0.001, max_iter=1000, penalty='l1', random_state=0, solver='liblinear') 
+ 
+The recall score for the minority 'subscriber' class (sensitivity) dropped a little bit from 0.76 to 0.74 but the recall score for the majority 'non-subscriber' class increased substantially from 0.45 to 0.72. In the end this may be a better model from the perspective of ROC curve area and Cumulative Gains analysis.
+
+The ROC analysis showed an AUC of 0.79 for the Logistic Regression Model with the added features, which is a substantial improvement over the AUC of 0.655 for the LR model with the top 4 client-data based features. There's also an improvement evident from the cumulative gains curve:  over 60% of subscribers can be reached by sampling only 20% of the  clients based on this model. This is a 40% points gain over just randomly sampling 20% of the population which would have expectedly netted only 20% of subscribers. To reach 80% of subscribers, just 50% of the clients need to be sampled based on the model which reflects a gain in subscribers by 30% points compared to just randomly sampling 50%.
+
+#### Recommendations and Future Steps
+A Logistic Regression Model built with top four client-data based features had a recall score of 0.76 and ROC-AUC of 0.655 with cumulative gains curve showing important gains in netting subscribers from sampling the clients based on the model compared to random sampling. The model however can be improved substantially in terms of ROC-AUC and cumulative gains if additional features related to type of client contact (telephone or cellular), month of contact, outcomes from previous campaigns and socio-economic attributes like euribor3m (3 month interest rate), consumer price index and consumer confidence index are added to the model on top of the four client-data based features. Potential next steps may involve evaluating other classifiers like Naive Bayes, Random Forest and Gradient Boosted Trees to see if they can provide a meaningful improvement in classification.
+ 
 
 
 
