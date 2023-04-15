@@ -123,7 +123,7 @@ We explored the possibility of boosting the performance of our model by incorpor
 Hence we add the following features to our Logistic Regression model to see if they can enhance the performance over the model that used just the  basic client info.
 
 
-Information that may affect subscription, e.g. contact type, month of contact, day of week to call the client
+Information that may affect subscription, e.g. contact type, month of contact, known outcomes from previous campaigns
 
 **contact**: contact communication type (categorical: 'cellular','telephone')
 
