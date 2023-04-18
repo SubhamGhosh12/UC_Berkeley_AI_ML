@@ -151,7 +151,7 @@ The above features are added on top of the four best client-related features to 
  
             LogisticRegression(C=0.001, max_iter=1000, penalty='l1', random_state=0, solver='liblinear') 
  
-The recall score for the minority 'subscriber' class (sensitivity) dropped a little bit from 0.76 to 0.74 but the recall score for the majority 'non-subscriber' class increased substantially from 0.45 to 0.72. In the end this may be a better model from the perspective of ROC curve area and Cumulative Gains analysis.
+The average fit time for the Logistic Regression model with added features was 0.0682 seconds which is still quite time-efficient. The recall score for the minority 'subscriber' class (sensitivity) dropped a little bit from 0.76 to 0.74 but the recall score for the majority 'non-subscriber' class increased substantially from 0.45 to 0.72. In the end this may be a better model from the perspective of ROC curve area and Cumulative Gains analysis.
 
 The ROC analysis showed an AUC of 0.79 for the Logistic Regression Model with the added features, which is a substantial improvement over the AUC of 0.655 for the LR model with the top 4 client-data based features. There's also an improvement evident from the cumulative gains curve:  over 60% of subscribers can be reached by sampling only 20% of the  clients based on this model. This is a 40% points gain over just randomly sampling 20% of the population which would have expectedly netted only 20% of subscribers. To reach 80% of subscribers, just 50% of the clients need to be sampled based on the model which reflects a gain in subscribers by 30% points compared to just randomly sampling 50%.
 
