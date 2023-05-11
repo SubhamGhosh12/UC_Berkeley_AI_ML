@@ -49,7 +49,7 @@ The best model, based on the highest ROC-area under curve for supervised learnin
 
 5) pob: region of birth
 
-It is no surprise that age is the top factor for mortality prediction. However there are several socioeconomic factors like number of people living in household, level of education and income which were also quite impactful for the model prediction. Interestingly attributes like presence of social security (ssnyn), race, status of health insurance (histatus) had the least impact on model predictions. Based on this model, investing in education and enabling the population at risk to complete a higher level of education and  have a higher income potential seem to be more effective at preventing mortality and  extending life than enabling social security or health insurance. Number of people in household is also a top factor for mortality prediction, indicating the importance of providing in-person social/family support for preventing mortality and extending lives.
+It is no surprise that age is the top factor for mortality prediction. However there are several socioeconomic factors like number of people living in household, level of education and income which were also quite impactful for the model prediction. Interestingly attributes like presence of social security (ssnyn), race, status of health insurance (histatus) had the least impact on model predictions. Based on this model, investing in education early on, and enabling the population at high risk regions (based on region of birth) to complete a higher level of education and  have a higher income potential in future,  seems like a more effective strategy at preventing mortality and  extending life than enabling social security or health insurance. Number of people in household is also a top factor for mortality prediction, indicating the importance of providing in-person social/family support for preventing mortality and extending lives.
 
 #### Next steps
 The next step is deployment of the model. This can be potentially done with Amazon SageMaker which is a cloud machine-learning platform that enables developers to create, train, and deploy machine-learning models in the cloud. 
@@ -62,3 +62,4 @@ The next step is deployment of the model. This can be potentially done with Amaz
 
 
 ##### Contact and Further Information
+Subham Ghosh, subham.ghosh@gmail.com
