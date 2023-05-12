@@ -65,7 +65,7 @@ The best model, based on the highest ROC-area under curve for supervised learnin
 
 5) pob: region of birth
 
-It is no surprise that age is the top factor for mortality prediction. However there are several socioeconomic factors like number of people living in household, level of education and income which were also quite impactful for the model prediction. Interestingly attributes like presence of social security (ssnyn), race, status of health insurance (histatus) had the least impact on model predictions. Counterfactuals generated using the dice-ml pacakage showed that an increase in the level of eduction and/or income would have resulted in opposite prediction for some cases where the original model prediction was positive for mortality.
+It is no surprise that age is the top factor for mortality prediction. However there are several socioeconomic factors like number of people living in household, level of education and income which were also quite impactful for the model prediction. Interestingly attributes like presence of social security (ssnyn), race, status of health insurance (histatus) had the least impact on model predictions. Counterfactuals generated using the dice-ml pacakage showed that an increase in the level of education and/or income would have resulted in opposite prediction for some cases where the original model prediction was positive for mortality.
 
 **Conclusion**
 
