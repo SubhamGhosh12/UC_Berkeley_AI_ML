@@ -56,9 +56,8 @@ The next step is deployment of the model. This can be potentially done with Amaz
 
 #### Outline of project
 
-- [Link to notebook 1]()
-- [Link to notebook 2]()
-- [Link to notebook 3]()
+- Link to notebook: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/Capstone1a.ipynb
+
 
 
 ##### Contact and Further Information
