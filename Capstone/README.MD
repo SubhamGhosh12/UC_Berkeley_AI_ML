@@ -52,6 +52,7 @@ The best model, based on the highest ROC-area under curve for supervised learnin
 It is no surprise that age is the top factor for mortality prediction. However there are several socioeconomic factors like number of people living in household, level of education and income which were also quite impactful for the model prediction. Interestingly attributes like presence of social security (ssnyn), race, status of health insurance (histatus) had the least impact on model predictions. Counterfactuals generated using the dice-ml pacakage showed that an increase in the level of eduction and/or income would have resulted in opposite prediction for some cases where the original model prediction was positive for mortality.
 
 **Conclusion**
+
 Based on this model, investing in education early on, and enabling the population at high risk regions (based on region of birth) to complete a higher level of education and  have a higher income potential in future,  seems like a more effective strategy at preventing mortality and  extending life than enabling social security or health insurance. Number of people in household is also a top factor for mortality prediction, indicating the importance of providing in-person social/family support for preventing mortality and extending lives.
 
 #### Next steps
