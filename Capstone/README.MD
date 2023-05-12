@@ -11,19 +11,34 @@
 The key objective of this project is to build machine learning models for predicting mortality and identifying the top risk factors associated with mortality in a nation-wide sample of US population.
 
 #### Data Sources
-The National Longitudinal Mortality Study (NLMS) is a national, longitudinal, mortality study sponsored by the National Heart, Lung, and Blood Institute, the National Cancer Institute, the Health Statistics part of the Center for Disease Control and Prevention and the US Census Bureau for the purpose of studying the effect of differentials in demographic and socio-economic characteristics on mortality. 
-
-The data includes a series of cross-sectional, national samples of the U.S. population, as identified from the Annual Social and Economic Supplement (ASEC – formerly the Current Population Survey) of the Bureau of the Census. The latest release of NLMS, version 5,  includes data files for public use from a survey with full follow-up for 11 years (n=1,835,072). Records from the Annual Social and Economic Supplement (ASEC), beginning in March 1979 were matched to the National Death Index to identify the occurrence and cause of death through 2011. Extensive demographic, social, economic, and occupation information is collected in the ASEC. The linkage of the individual social and economic data with the mortality outcomes provides the resource for extensive analysis. The data corresponding to categorical attributes are pre-encoded using numeric values so that all columns have numeric entries. This data has been provided  upon request submitted at https://biolincc.nhlbi.nih.gov/studies/nlms/
+The National Longitudinal Mortality Study (NLMS) is a national, longitudinal, mortality study sponsored by the National Heart, Lung, and Blood Institute, the National Cancer Institute, the Health Statistics part of the Center for Disease Control and Prevention and the US Census Bureau for the purpose of studying the effect of differentials in demographic and socio-economic characteristics on mortality. This data has been provided  upon request submitted at https://biolincc.nhlbi.nih.gov/studies/nlms/
 
 #### Methodology
 
+The CRISP-DM framework is followed as closely as possible for this project. 
+
+***Business Understanding***
+
+The objective is to identify key demographic, geographic and socio-economic risk factors for mortality in US, so that future policies can be instituted that can potentially benefit the population at risk in terms of mortality prevention and increasing average life span.  
+
+***Data Understanding***
+
+The data includes a series of cross-sectional, national samples of the U.S. population, as identified from the Annual Social and Economic Supplement (ASEC – formerly the Current Population Survey) of the Bureau of the Census. The latest release of NLMS, version 5,  includes data files for public use from a survey with full follow-up for 11 years (n=1,835,072). Records from the Annual Social and Economic Supplement (ASEC), beginning in March 1979 were matched to the National Death Index to identify the occurrence and cause of death through 2011. Extensive demographic, social, economic, and occupation information is collected in the ASEC. The linkage of the individual social and economic data with the mortality outcomes provides the resource for extensive analysis. The data corresponding to categorical attributes are pre-encoded using numeric values so that all columns have numeric entries.
+
+***Data Preparation***
+
 The data is cleaned following standard procedures including removal of columns with too many missing entries (>1000000), and attributes like record id, cause of mortality, houshold number, length of follow-up, death indicator which are  features that should not be included in a realistic mortality predictor. The data is next inspected for highly correlated features and attributes that have a high correlation (>0.85) to another variable in the dataset are dropped. After this preprocessing is completed, the resulting dataframe to be used as input features for the models consists of 657736 rows and 23 columns. A numeric binary  variable indicating mortality/no mortality based on 11 years of follow-up, is defined separately as a target variable for the models. Initial exploratory data analysis is peformed to visualize the potential impact of different attributes on the mortality.
+
+***Modeling***
 
 Two different machine learning approaches were used:
 
 1) Unsupervised Learning: In this approach the population is divided into clusters using Principal Component Analysis and KMeans Cluster (n_cluster=3) based on the set of 23 input attributes. The clusters are evaluated to see if they are meaningful in terms of identifying groups that are at increased risk of all-cause mortality or mortality due to specific causes like cardiopulmonary diseases, cancer, infections, accidents.
 
-2) Supervised Learning: In this approach, different machine learning models including Logistic Regression, Random Forest, Naive Bayes, Gradient Boosting Classifiers and Multi-Layer Percepton (MLP) Classifier based on neural networks are evaluated and compared with their ROC-area under curve for prediction of mortality. Since the data had a high degree of class imbalance with mortality in only 4.3% of the population in the database, the training data is oversampled using Synthetic Minority Oversampling Technique (SMOTE) to address the class imbalance. The relative feature importances of the different attributes corresponding to the best model are further evaluated to identify the top five attributes with most impact on model prediction. Once the best model is identified, counterfactual explanations are generated using  the dice-ml package to determine changes in certain attributes that would have resulted in the model prediction changing from mortality to no mortality
+2) Supervised Learning: In this approach, different machine learning models including Logistic Regression, Random Forest, Naive Bayes, Gradient Boosting Classifiers and Multi-Layer Percepton (MLP) Classifier based on neural networks are evaluated and compared with their ROC-area under curve for prediction of mortality. Since the data had a high degree of class imbalance with mortality in only 4.3% of the population in the database, the training data is oversampled using Synthetic Minority Oversampling Technique (SMOTE) to address the class imbalance. 
+
+***Evaluation***
+The unsupervised model is evaluated for meaningful differences in the groups created by the clustering method, based on demographic factors, overall mortality rates, incidences of mortality due to common causes like cardiopulmonary disease, cancer, infections, accidents. The supervised models are evaluated based on ROC-area under the curve (AUC) with a higher AUC in general indicating better performance in terms of sensitivity and specificity to mortality. Hold out cross-validation (using 'train test split' with a default test size of 0.25) is used to evaluate and compare the different classifier  models. Once the best model is identified, the relative feature importance is explored to determine the top attributes with the highest impact on model predictions. Counterfactuals are generated using the dice-ml package to determine changes in attributes that flip the model predictions of mortality.
 
 #### Results
 
