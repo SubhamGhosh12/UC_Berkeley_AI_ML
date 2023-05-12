@@ -38,6 +38,7 @@ Two different machine learning approaches were used:
 2) Supervised Learning: In this approach, different machine learning models including Logistic Regression, Random Forest, Naive Bayes, Gradient Boosting Classifiers and Multi-Layer Percepton (MLP) Classifier based on neural networks are evaluated and compared with their ROC-area under curve for prediction of mortality. Since the data had a high degree of class imbalance with mortality in only 4.3% of the population in the database, the training data is oversampled using Synthetic Minority Oversampling Technique (SMOTE) to address the class imbalance. 
 
 ***Evaluation***
+
 The unsupervised model is evaluated for meaningful differences in the groups created by the clustering method, based on demographic factors, overall mortality rates, incidences of mortality due to common causes like cardiopulmonary disease, cancer, infections, accidents. The supervised models are evaluated based on ROC-area under the curve (AUC) with a higher AUC in general indicating better performance in terms of sensitivity and specificity to mortality. Hold out cross-validation (using 'train test split' with a default test size of 0.25) is used to evaluate and compare the different classifier  models. Once the best model is identified, the relative feature importance is explored to determine the top attributes with the highest impact on model predictions. Counterfactuals are generated using the dice-ml package to determine changes in attributes that flip the model predictions of mortality.
 
 #### Results
