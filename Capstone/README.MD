@@ -17,7 +17,7 @@ The data includes a series of cross-sectional, national samples of the U.S. popu
 
 #### Methodology
 
-The data is cleaned following standard procedures including removal of columns with too many missing entries (>1000000), and attributes like record id, cause of mortality, houshold number, length of follow-up, death indicator which are  features that should not be included in a realistic mortality predictor. The data is next inspected for highly correlated features and attributes that have a high correlation (>0.85) to another variable in the dataset are dropped. After this preprocessing is completed, the resulting dataframe to be used as input features for the models consists of 657736 rows and 23 columns. A binary  variable indicating mortality/no mortality based on 11 years of follow-up, is defined separately as a target variable for the models. Initial exploraotory data analysis is peformed to visualize the potential impact of different attributes on the mortality.
+The data is cleaned following standard procedures including removal of columns with too many missing entries (>1000000), and attributes like record id, cause of mortality, houshold number, length of follow-up, death indicator which are  features that should not be included in a realistic mortality predictor. The data is next inspected for highly correlated features and attributes that have a high correlation (>0.85) to another variable in the dataset are dropped. After this preprocessing is completed, the resulting dataframe to be used as input features for the models consists of 657736 rows and 23 columns. A numeric binary  variable indicating mortality/no mortality based on 11 years of follow-up, is defined separately as a target variable for the models. Initial exploratory data analysis is peformed to visualize the potential impact of different attributes on the mortality.
 
 Two different machine learning approaches were used:
 
@@ -56,7 +56,7 @@ It is no surprise that age is the top factor for mortality prediction. However t
 Based on this model, investing in education early on, and enabling the population at high risk regions (based on region of birth) to complete a higher level of education and  have a higher income potential in future,  seems like a more effective strategy at preventing mortality and  extending life than enabling social security or health insurance. Number of people in household is also a top factor for mortality prediction, indicating the importance of providing in-person social/family support for preventing mortality and extending lives.
 
 #### Next steps
-The next step is deployment of the model. This can be potentially done with Amazon SageMaker which is a cloud machine-learning platform that enables developers to create, train, and deploy machine-learning models in the cloud. 
+The next step is deployment of the model. This can be potentially done with Amazon SageMaker which is a cloud machine-learning platform that enables developers to create, train, and deploy machine-learning models in the cloud. Based on the demographic, geographic and socio-economic factors that present a higher risk of mortality from this model, future studies can be designed to collect more data in the vulnerable population to better understand and develop a strategy that can help reduce mortality and extend  life span in this group.
 
 #### Outline of project
 
