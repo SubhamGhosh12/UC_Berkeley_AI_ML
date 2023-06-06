@@ -76,7 +76,12 @@ The next step is deployment of the model. This can be potentially done with Amaz
 
 #### Outline of project
 
-- Link to notebook: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/Capstone1a.ipynb
+- Link to notebook with the full capstone project: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/Capstone1a.ipynb
+- Data Preprocessing: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/DataPreProcessing.ipynb
+- Exploratory Data Analysis: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/ExploratoryDataAnalysis.ipynb
+- Unsupervised Machine Learning Model: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/Modeling_UnsupervisedML.ipynb
+- Supervised Machine Learning Model: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/Modeling_SupervisedML.ipynb
+- Supervised Machine Learning Model with Relative Feature Importance and Counterfactual Explanations: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/SupervisedML_FeatureImportance_CFE.ipynb
 
 
 
