@@ -81,7 +81,7 @@ The next step is deployment of the model. This can be potentially done with Amaz
 - Exploratory Data Analysis: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/ExploratoryDataAnalysis.ipynb
 - Unsupervised Machine Learning Model: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/Modeling_UnsupervisedML.ipynb
 - Supervised Machine Learning Model: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/Modeling_SupervisedML.ipynb
-- Supervised Machine Learning Model with Relative Feature Importance and Counterfactual Explanations: https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/SupervisedML_FeatureImportance_CFE.ipynb
+- Relative Feature Importance and Counterfactual Explanations for the best Supervised Machine Learning Model (Random Forest Classifer): https://github.com/SubhamGhosh12/UC_Berkeley_AI_ML/blob/main/Capstone/SupervisedML_FeatureImportance_CFE.ipynb
 
 
 
